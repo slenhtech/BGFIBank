@@ -54,7 +54,7 @@
 
                 <div class="row grid">
                     <?php
-                    echo do_shortcode('[downloads template="bgfi" category="publications" before="<div>" after="</div>"]');
+                    echo do_shortcode('[downloads template="bgfi" category="'. get_field('categorie_de_telechargement') .'" before="<div>" after="</div>"]');
                     ?>
                 </div>
             </div>

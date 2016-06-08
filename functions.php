@@ -32,9 +32,7 @@ add_action('wp_enqueue_scripts','bgfi_script_enqueue');
 function bgfi_theme_setup(){
     add_theme_support('menus');
 
-    register_nav_menu('nous-connaitre','Nous connaître');
-    register_nav_menu('nous-rejoindre','Nous rejoindre');
-    register_nav_menu('nos-engagements','Nos engagements');
+    register_nav_menu('reseaux-sociaux','Réseaux sociaux');
 }
 add_action('init','bgfi_theme_setup');
 

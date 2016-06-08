@@ -1,0 +1,145 @@
+
+.actualite{
+  padding: 40px 0;
+  margin: 15px 0;
+  @include linear-gradient(45deg, $green 0%, darken($green, 20%) 60%);
+
+  .owl-dots{
+    position: absolute;
+    display: inline-block;
+    right: 50px;
+    bottom: 20px;
+  }
+
+  .container{
+    padding: 0;
+    .col-sm-6{
+      iframe{
+        -webkit-box-shadow: 0 20px 5px -15px rgba(#000, 0.2);
+      }
+    }
+    .content{
+      padding: 30px 40px;
+
+      p{
+        color: #fff;
+      }
+    }
+    h3{
+      font-family: $title_1;
+      font-size: 35px;
+      width: 70%;
+      position: relative;
+    }
+    h3:before{
+      content: '';
+      display: block;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: -20px;
+      top: -25px;
+      background: url("../img/band-b.png") no-repeat center center;
+      background-size: cover;
+    }
+  }
+}
+
+.actualite_articles{
+  //background-color: #fff;
+  .section-title{
+    font-size: 40px;
+    font-family: $title_1;
+    color: $green;
+  }
+  .section-title:after{
+    content: '';
+    display: block;
+    width: 100px;
+    margin-top: 15px;
+    border-bottom: solid 3px $blue;
+  }
+  .col-xs-6{
+    padding: 0;
+  }
+  .articles{
+    .article{
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      padding: 40px 30px 20px;
+      z-index: 0;
+      height: 300px;
+
+      h3{
+        width: 70%;
+        font-family: $title_1;
+        font-size: 25px;
+        color: #fff;
+      }
+      .date{
+        font-family: $title_2;
+        color: $green;
+        font-size: 15px;
+      }
+      .date:before{
+        content: '\f017';
+        font-family: 'FontAwesome', sans-serif;
+        color: #fff;
+        margin-right: 5px;
+      }
+    }
+    .article.no-picture{
+      z-index: 1;
+      @include linear-gradient(45deg, $blue 0%, darken($blue, 10%) 120%);
+    }
+    .article.picture:after{
+      @include after(#000, 0.4);
+    }
+  }
+  .advert{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+    position: relative;
+    z-index: 0;
+    height: 600px;
+
+    h3{
+      padding: 0 10px;
+      font-size: 25px;
+      font-family: $title_2;
+      color: $blue;
+
+      span{
+        font-size: 30px;
+      }
+    }
+    p{
+      padding: 10px;
+      font-size: 18px;
+      line-height: 20px;
+      span{
+        font-family: $title_2;
+        font-size: 23px;
+      }
+    }
+
+    .download-btn{
+      display: block;
+      width: 70%;
+      margin: 8px auto;
+      img{
+        width: 100%;
+      }
+    }
+    .download-btn:first-of-type{
+      margin-top: 60px;
+    }
+  }
+  .advert:after{
+  @include after(#fff, 0.6)
+  }
+}

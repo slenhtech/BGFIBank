@@ -1,0 +1,69 @@
+#carousel{
+
+  .container{
+    position: relative;
+    padding: 0;
+
+    /*.band {
+      height: 70px;
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      top: 0;
+    }*/
+
+    .slide{
+      height: 500px;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+
+
+      .content{
+        padding: 150px 20px 0;
+
+        h1{
+          margin: 0;
+          font-family: $title_2;
+          width: 50%;
+          line-height: 36px;
+          text-transform: uppercase;
+          padding: 30px;
+          background: rgba(#fff, 0.7);
+
+          small{
+            text-transform: none;
+            color: $blue;
+          }
+        }
+        .exerpt{
+          position: absolute;
+          display: block;
+          text-align: right;
+          padding: 30px 30px;
+          border-top: solid 15px $blue;
+          width: 100%;
+          z-index: 10;
+          right: 0;
+          bottom: -10px;
+          background: #fff;
+        }
+        .exerpt:after{
+          content: '';
+          display: block;
+          width: 20%;
+          background: #fff;
+          height: 50px;
+          position: absolute;
+          z-index: 11;
+          right: 0;
+          top: -50px;
+          border-left: solid 15px $blue;
+          border-top: solid 15px $blue;
+        }
+      }
+    }
+  }
+  @include blueBand(5%);
+}

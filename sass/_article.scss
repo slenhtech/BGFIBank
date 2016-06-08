@@ -1,0 +1,213 @@
+#product-carousel{
+  .owl-dots{
+    position: relative;
+    bottom: 35px;
+  }
+}
+.article{
+  .container{
+    background-color: #fff;
+    .header{
+      height: 400px;
+      background-position: center 30%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      padding: 40px 30px 20px;
+      z-index: 0;
+    }
+    .header.no-featured-image{
+      @include linear-gradient(45deg, $blue 0%, darken($blue, 10%) 120%);
+    }
+
+    .main{
+      padding-bottom: 50px;
+
+      .title{
+        font-size: 50px;
+        width: 80%;
+        font-family: $title_1;
+        padding: 30px 0;
+        color: $green;
+      }
+      h2,
+      h3,
+      h4{
+        font-family: $title_2;
+        color: $green;
+      }
+      .title:after{
+        content: '';
+        display: block;
+        width: 100px;
+        border: solid 2px $blue;
+        margin-top: 10px;
+      }
+      .siteMap{
+        margin: 10px 0 30px;
+      }
+      .date{
+        color: $blue;
+        margin-top: 30px;
+      }
+
+      strong{
+        color: $blue;
+      }
+
+      ul{
+        padding-left: 15px;
+        list-style: none;
+
+        position: relative;
+
+        li{
+          margin: 20px 0;
+        }
+
+        li:before{
+          content: '\f105';
+          font-family: 'FontAwesome', sans-serif;
+          position: absolute;
+          left: 0px;
+          color: $blue;
+        }
+      }
+
+      a{
+        display: inline-block;
+        vertical-align: top;
+        font-size: 14px;
+      }
+      a:after{
+        content: '\f105';
+        font-family: 'FontAwesome', sans-serif;
+        margin: 0 10px;
+      }
+      a:last-of-type{
+        color: $green;
+      }
+      a:last-of-type:after{
+        content: '';
+      }
+
+      p{
+        text-align: justify;
+        margin: 20px 0;
+      }
+      blockquote{
+        font-size: 30px;
+        line-height: 30px;
+        font-family: $title_1;
+        color: $blue;
+        margin: 40px 0;
+        border: none;
+      }
+    }
+    .aside{
+      h3{
+        color: $green;
+        margin: 20px 0;
+      }
+      .section{
+        margin-bottom: 30px;
+      }
+      label{
+        display: block
+      }
+      h3:after{
+        content: '';
+        display: block;
+        width: 50px;
+        border: solid 2px $blue;
+        margin-top: 10px;
+      }
+      [type="text"]{
+        width: 80%;
+        display: inline-block;
+        height: 35px;
+        padding: 0 10px;
+        margin: 0;
+      }
+      [type="submit"]{
+        width: 18%;
+        display: inline-block;
+        height: 36px;
+        border: none;
+        margin-left: -5px;
+      }
+
+      ul{
+        padding: 0;
+        margin: 15px 0 15px 10px;
+
+        li:before{
+          content: '\f105';
+          font-family: 'FontAwesome', sans-serif;
+          color: $green;
+          margin-right: 5px;
+        }
+      }
+      .thumb{
+        margin: 2.5px 0;
+        background-color: #fff;
+        .img{
+          height: 97.75px;
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          position: relative;
+          cursor: pointer;
+        }
+        .info{
+          padding: 0 10px;
+          margin-bottom: 20px;
+
+          h4{
+            font-family: $title_2;
+            color: $blue;
+            font-size: 16px;
+            height: 18px;
+            overflow-y: hidden;
+            margin-bottom: 10px;
+          }
+          p{
+            font-size: 11px;
+            height: 46px;
+            overflow-y: hidden;
+            margin: 0;
+            text-align: justify;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dlm-downloads{
+  display: block;
+  width: 100%;
+  position: relative;
+
+  .frame{
+    height: 230px;
+    overflow: hidden;
+
+    .wp-post-image{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+
+  .download-box{
+    border: none;
+    box-shadow: none;
+
+    h5{
+      font-family: $title_2;
+      color: $blue;
+    }
+  }
+
+}

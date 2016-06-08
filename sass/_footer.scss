@@ -1,0 +1,71 @@
+footer{
+  background-color: #fff;
+  padding: 40px 0 10px;
+  margin-top: 30px;
+  font-size: 12px;
+
+  .logo{
+    .apps{
+      .fa{
+        margin: 15px 5px;
+      }
+    }
+  }
+
+  h4{
+    text-transform: uppercase;
+    font-family: 'latoregular', sans-serif;
+    font-size: 14px;
+    color: $blue;
+  }
+  a{
+    font-size: 12px;
+    color: $green;
+  }
+  .form-group{
+    input{
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+      padding: 0 15px;
+      width: 78%;
+      height: 40px;
+      border: solid 1px $green;
+      background: none;
+    }
+    @include placeholder;
+
+    button{
+      display: inline-block;
+      vertical-align: top;
+      width: 20%;
+      height: 40px;
+      border: none;
+      background: $blue;
+      color: #fff;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+  ul{
+    padding: 0;
+
+    li:before{
+      content: '\f105';
+      font-family: 'FontAwesome', sans-serif;
+      margin-right: 5px;
+      color: #000;
+    }
+  }
+  .copyright{
+    ul{
+      li{
+        float: left;
+      }
+
+      li:before{
+        content: '';
+      }
+    }
+  }
+}

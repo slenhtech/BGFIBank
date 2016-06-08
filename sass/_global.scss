@@ -1,0 +1,45 @@
+a,
+a:active,
+a:focus,
+a:hover{
+  text-decoration: none;
+}
+label{
+  font-weight: normal;
+}
+h1,
+h2,
+.h1,
+.h2{
+  margin-top: 0;
+}
+.img-responsive{
+  width: 100%;
+}
+.clearPadding{
+  padding: 0;
+}
+.relative{
+  .dropdown-menu{
+    left: auto !important;
+  }
+}
+*:focus{
+  outline: none;
+}
+body{
+  background-color: #f0f0f0;
+  font-family: $font1;
+}
+strong{
+  font-family: $title_2;
+}
+.clearpadding{
+  padding: 0;
+}
+ul{
+  list-style: none;
+}/*
+.dropdown:hover .dropdown-menu {
+  display: block;
+}*/

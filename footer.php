@@ -8,11 +8,18 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <h4>Nous connaître</h4>
-                        <?php wp_nav_menu(array(
+                        <ul>
+                            <li><a href="#">Le mot du PDG</a></li>
+                            <li><a href="#">BGFIBank en bref</a></li>
+                            <li><a href="#">La gouvernance</a></li>
+                            <li><a href="#">La culture d’entreprise</a></li>
+                            <li><a href="#">Publications</a></li>
+                        </ul>
+                        <?php /*wp_nav_menu(array(
                             'menu' => 'nous-connaitre',
                             'container' => false,
                             'menu_class' => ''
-                        ));?>
+                        ));*/?>
                     </div>
                     <div class="col-sm-3">
                         <h4>Nos métiers</h4>
@@ -25,11 +32,18 @@
                     </div>
                     <div class="col-sm-3">
                         <h4>Nous rejoindre</h4>
-                        <?php wp_nav_menu(array(
+                        <ul>
+                            <li><a href="#">Notre politique RH</a></li>
+                            <li><a href="#">Les collaborateurs dans le monde</a></li>
+                            <li><a href="#">Candidature spontanée</a></li>
+                            <li><a href="#">Nos offres d'emploi</a></li>
+                            <li><a href="#">Nos offres de stage</a></li>
+                        </ul>
+                        <?php /*wp_nav_menu(array(
                             'menu' => 'nous-rejoindre',
                             'container' => false,
                             'menu_class' => ''
-                        ));?>
+                        ));*/?>
                     </div>
                     <div class="col-sm-3">
                         <h4>Notre actualité</h4>
@@ -118,9 +132,9 @@
             <div class="col-sm-2 col-sm-pull-10 logo">
                 <img src="<?php echo get_template_directory_uri();?>/img/logo.png" class="img-responsive" alt="Logo">
                 <div class="text-center apps">
-                    <a href="#" target="_blank" class="fa fa-2x fa-android"></a>
-                    <a href="#" target="_blank" class="fa fa-2x fa-apple"></a>
-                    <a href="#" target="_blank" class="fa fa-2x fa-windows"></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.bgfi.mobile&hl=fr" target="_blank" class="fa fa-2x fa-android"></a>
+                    <a href="https://itunes.apple.com/sn/app/bgfimobile/id1086600984?mt=8" target="_blank" class="fa fa-2x fa-apple"></a>
+                    <a href="https://www.microsoft.com/fr-fr/store/apps/bgfimobile/9nblggh6hjt2" target="_blank" class="fa fa-2x fa-windows"></a>
                 </div>
             </div>
         </div>

@@ -65,11 +65,12 @@
     <!-- ============================
              Nav menu
     ============================== -->
+
     <nav class="nav">
         <div class="container">
             <div class="navbar navbar-static">
                 <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#dropdown">
                         Menu &nbsp; <i class="fa fa-bars fa-lg"></i>
                     </button>
                 </div>
@@ -81,104 +82,23 @@
                     'walker' => new Walker_Nav_Primary()
                 ));*/?>
                 </div>-->
-                <div class="collapse navbar-collapse js-navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown dropdown-large">
-                            <a href="<?php echo home_url();?>">Accueil</a>
-                        </li>
-                        <li class="dropdown dropdown-large">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nous connaître <b class="caret"></b></a>
-
-                            <ul class="dropdown-menu dropdown-menu-large row">
-                                <li class="col-sm-12">
-                                    <?php wp_nav_menu(array(
-                                        'menu' => 'nous-connaitre',
-                                        'container' => false,
-                                    ));?>
-                                </li>
+                <div class="collapse navbar-collapse" id="dropdown">
+                    <?php wp_nav_menu(array(
+                        'theme_location' => 'primary',
+                        'container' => false,
+                        'menu_class' => 'nav navbar-nav',
+                        /*'walker' => new Walker_Nav_Primary()*/
+                    ));?>
+                    <!--<ul class="nav navbar-nav">
+                        <li><a href="<?php /*home_url();*/?>"><i class="fa fa-home fa-lg"></i> &nbsp; Accueil</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nous connaître<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
                             </ul>
                         </li>
-                        <li class="dropdown dropdown-large">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nos métiers <b class="caret"></b></a>
-
-                            <ul class="dropdown-menu dropdown-menu-large row">
-                                <li class="col-sm-6">
-                                    <ul>
-                                        <li class="dropdown-header">Banque Commerciale</li>
-                                        <li><a href="#">BGFIBank Gabon</a></li>
-                                        <li><a href="#">BGFIBank Bénin</a></li>
-                                        <li><a href="#">BGFIBank Sao Tomé et Principe</a></li>
-                                        <li><a href="#">BGFIBank Congo</a></li>
-                                        <li><a href="#">BGFIBank Guinée équatoriale</a></li>
-                                        <li><a href="#">BGFIBank Côte d’Ivoire</a></li>
-                                        <li><a href="#">BGFIBank Europe</a></li>
-                                        <li><a href="#">BGFIBank Madagascar</a></li>
-                                        <li><a href="#">BGFIBank Cameroun</a></li>
-                                        <li><a href="#">BGFIBank RDC</a></li>
-                                        <li><a href="#">BGFIBank Sénégal</a></li>
-                                    </ul>
-                                </li>
-                                <li class="col-sm-6">
-                                    <ul>
-                                        <li class="dropdown-header">Banque D’Investissement</li>
-                                        <li><a href="#">BGFI Bourse</a></li>
-                                        <li><a href="#">BGFI Capital</a></li>
-                                        <li class="divider"></li>
-                                        <li class="dropdown-header">Assurance</li>
-                                        <li><a href="#">Assinco S.A</a></li>
-                                        <li class="divider"></li>
-                                        <li class="dropdown-header">Services financiers spécialisés</li>
-                                        <li><a href="#">Finatra</a></li>
-                                        <li><a href="#">LOXIA</a></li>
-                                        <li><a href="#">Hedenia</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown dropdown-large relative">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nos engagements RSE <b class="caret"></b></a>
-                            <ul class="dropdown-menu dropdown-menu-large row">
-                                <li class="col-sm-12">
-                                    <?php wp_nav_menu(array(
-                                        'menu' => 'nos-engagements',
-                                        'container' => false,
-                                    ));?>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown dropdown-large relative">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nous rejoindre <b class="caret"></b></a>
-
-                            <ul class="dropdown-menu dropdown-menu-large row">
-                                <li class="col-sm-12">
-                                    <ul>
-                                        <?php wp_nav_menu(array(
-                                            'menu' => 'nous-rejoindre',
-                                            'container' => false,
-                                        ));?>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown dropdown-large relative">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nous rejoindre <b class="caret"></b></a>
-
-                            <ul class="dropdown-menu dropdown-menu-large row">
-                                <li class="col-sm-12">
-                                    <ul>
-                                        <?php wp_nav_menu(array(
-                                            'menu' => 'nous-rejoindre',
-                                            'container' => false,
-                                        ));?>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown dropdown-large">
-                            <a href="<?php echo  get_permalink(22);?>"><?php echo get_the_title(22);?></a>
-                        </li>
-                    </ul>
-                </div><!-- /.nav-collapse -->
+                    </ul>-->
+                </div>
             </div>
         </div>
     </nav>

@@ -32,6 +32,11 @@ add_action('wp_enqueue_scripts','bgfi_script_enqueue');
 function bgfi_theme_setup(){
     add_theme_support('menus');
 
+    register_nav_menu('primary','Menu principal');
+    register_nav_menu('nous-connaitre','Nous connaître');
+    register_nav_menu('nos-actualites','Nos actualités');
+    register_nav_menu('nous-rejoindre','Nos rejoindre');
+    register_nav_menu('vous-etes','Vous êtes');
     register_nav_menu('reseaux-sociaux','Réseaux sociaux');
 }
 add_action('init','bgfi_theme_setup');
@@ -120,37 +125,55 @@ add_action('init','bgfi_carousel_post_type');
 
 /*
   ======================================
-    Custom taxonomy
+    Custom walker Class
   ======================================
  */
+class Walker_Nav_Primary extends Walker_Nav_Menu {
+    function start_lvl(&$output, $depth)
+    {
+        $indent = str_repeat("\t", $depth);
+        $submenu = ($depth > 0) ? ' sub-menu' : '';
+        $output .= "\n$indent<ul class=\"dropdown-menu$submenu depth_$depth\">\n";
+    }
 
-/*function bgfi_custom_taxonomies() {
-    //Add new taxonomy hierarchical
-    $labels = array(
-        'name' => 'Catégories',
-        'singular_name' => 'Catégorie',
-        'search_items' => 'Rechercher catégories',
-        'all_items' => 'Toute les catégories',
-        'parent_item' => 'Catégorie parent',
-        'parent_item_colon' => 'Catégorie parent:',
-        'edit_item' => 'Modifier une catégorie',
-        'update_item' => 'Mettre à jour une catégorie',
-        'add_new_item' => 'Ajouter une nouvelle catégorie de produits',
-        'new_item_name' => 'Nouveau nom de catégorie',
-        'menu_name' => 'Catégories',
-    );
-    $args = array(
-        'hierarchical' => true,
-        'labels' => $labels,
-        'show_ui' => true,
-        'show_admin_column' => true,
-        'query_var' => true,
-        'rewrite' => array('slug' => 'categorie')
-    );
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+    {
+        $indent = ( $depth ) ? str_repeat("\t", $depth) : '';
 
-    register_taxonomy('categorie', array('page'), $args);
+        $li_attributes = '';
+        $class_names = $value = '';
+
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+        $classes[] = ($args->has_children) ? 'dropdown' : '';
+        $classes[] = ($item->current || $item->current_item_anchestor) ? 'active' : '';
+        $classes[] = 'menu-item-' . $item->ID;
+        if( $depth && $args->has_children ){
+            $classes[] = 'dropdown-submenu';
+        }
+
+        $class_names = join('', apply_filters('nav_menu_css_class', array_filter( $classes ), $item, $args));
+        $class_names = ' class="' . esc_attr( $id ) . '""';
+
+        $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
+        $id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
+
+        $output .= $indent . '<li' . $id . $value . $class_names . $li_attributes . '>';
+
+        $attributes = ! empty( $item->attr_title ) ?  ' title="' . esc_attr($item->attr_title) . '"' : '';
+        $attributes .= ! empty( $item->target ) ? ' target="' . esc_attr($item->target) . '"' : '';
+        $attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
+        $attributes .= ! empty( $item->url ) ? ' href="' . esc_attr($item->url) . '"' : '';
+
+        $attributes .= ( $args->walker->has_children ) ? 'class="dropdown-toggle" data-toggle="dropdown"' : '';
+
+        $item_output = $args->before;
+        $item_output .= '<a' . $attributes . '>';
+        $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+        $item_output .= ( $depth == 0 && $args->walker->has_children ) ? '<b class="caret"></b></a>' : '</a>';
+        $item_output .= $args->after;
+
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+
+    }
 }
-add_action('init','bgfi_custom_taxonomies');*/
-
-
-
